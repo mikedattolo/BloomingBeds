@@ -302,11 +302,11 @@ The final prototype demonstrates the practical application of our research. This
 ## 🏆 Recognition & Achievements
 
 <div align="center">
-  <img src=".github/achievements/award.jpg" alt="JWU Research Symposium Award 2023" width="700"/>
-  <p><strong>JWU Research Symposium 2023 - Award for Creativity and Design</strong></p>
+  <img src=".github/achievements/award.jpg" alt="JWU Research Symposium Award 2024" width="700"/>
+  <p><strong>JWU Research Symposium 2024 - Award for Creativity and Design</strong></p>
 </div>
 
-Our team was honored to receive the **Award for Creativity and Design** at the **Johnson & Wales University Research Symposium 2023** for the Bloomin Beds project. This recognition celebrates our innovative approach to solving real-world agricultural challenges through the integration of passive and active ventilation systems, IoT sensor technology, and user-centered design.
+Our team was honored to receive the **Award for Creativity and Design** at the **Johnson & Wales University Research Symposium 2024** for the Bloomin Beds project. The project began in 2023 and culminated in this prestigious recognition in 2024, celebrating our innovative approach to solving real-world agricultural challenges through the integration of passive and active ventilation systems, IoT sensor technology, and user-centered design.
 
 The award acknowledges:
 - **Innovative Problem-Solving**: Dual approach combining passive mechanical and active electronic solutions
