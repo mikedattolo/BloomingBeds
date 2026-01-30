@@ -279,7 +279,42 @@ Weather-resistant materials investigated include:
 - **Mathew Hartung**: Passive ventilation prototypes and scale model development
 - **Keely Doyle**: Weather analysis and phase-change materials research
 - **Liz Virian & Cassandra**: Brand identity, app design, and web interface
+### Real-World Implementation
 
+#### JWU Garden Bed Installation
+<div align="center">
+  <img src=".github/research/JWU gardenbed.jpg" alt="JWU Garden Bed" width="700"/>
+  <p><em>One of the actual garden beds in use at Johnson & Wales University's Harborside campus</em></p>
+</div>
+
+These are the operational garden beds that inspired our project. Located on the JWU Harborside campus, they demonstrate the real-world challenges of maintaining optimal growing conditions throughout New England's harsh winters while preventing heat buildup during sunny days.
+
+#### Final Prototype with Active Testing
+<div align="center">
+  <img src=".github/research/finalgardenbed.jpg" alt="Final Garden Bed Prototype" width="700"/>
+  <p><em>Our completed test garden bed featuring the integrated ventilation system with turnips successfully growing inside</em></p>
+</div>
+
+The final prototype demonstrates the practical application of our research. This fully functional garden bed incorporates our ventilation system and sensor network, with live plants (turnips) proving the system's effectiveness. The visible ventilation components show how the automated system maintains optimal growing conditions while the thriving plants validate our design approach.
+
+---
+
+## 🏆 Recognition & Achievements
+
+<div align="center">
+  <img src=".github/achievements/award.jpg" alt="JWU Research Symposium Award 2023" width="700"/>
+  <p><strong>JWU Research Symposium 2023 - Award for Creativity and Design</strong></p>
+</div>
+
+Our team was honored to receive the **Award for Creativity and Design** at the **Johnson & Wales University Research Symposium 2023** for the Bloomin Beds project. This recognition celebrates our innovative approach to solving real-world agricultural challenges through the integration of passive and active ventilation systems, IoT sensor technology, and user-centered design.
+
+The award acknowledges:
+- **Innovative Problem-Solving**: Dual approach combining passive mechanical and active electronic solutions
+- **Design Excellence**: Comprehensive 3D modeling, prototyping, and user interface development
+- **Practical Application**: Successfully addressing year-round growing challenges in New England climate
+- **Collaborative Achievement**: Multidisciplinary team bringing together product design, engineering, and technology
+
+This achievement validates our commitment to creating sustainable, accessible solutions for urban agriculture and educational gardening programs.
 ---
 
 ## �🚀 Getting Started
