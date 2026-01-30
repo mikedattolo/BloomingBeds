@@ -70,6 +70,54 @@ Our mission is to enable year-round sustainable gardening through innovative tec
 
 ---
 
+## 🏗️ 3D Design & Ventilation System Simulations
+
+The ventilation system at the heart of Bloomin Beds was designed and simulated using **Rhino 3D** modeling software. These simulations demonstrate the physical design of the garden bed structure, the integrated ventilation components, and how airflow is managed to maintain optimal growing conditions throughout the year.
+
+### System Design Renderings
+
+<div align="center">
+  <img src=".github/rhino-simulations/ViewCapture20231006_194429.jpg" alt="Garden Bed Complete Assembly" width="700"/>
+  <p><em>Complete garden bed assembly showing ventilation integration and structural design</em></p>
+</div>
+
+<div align="center">
+  <img src=".github/rhino-simulations/ViewCapture20231006_194604.jpg" alt="Ventilation System Detail" width="700"/>
+  <p><em>Detailed view of the ventilation system components and airflow channels</em></p>
+</div>
+
+### Component Design Details
+
+<div align="center">
+  <table>
+    <tr>
+      <td><img src=".github/rhino-simulations/Capture.PNG" alt="Component View 1" width="350"/></td>
+      <td><img src=".github/rhino-simulations/Capture2.PNG" alt="Component View 2" width="350"/></td>
+    </tr>
+    <tr>
+      <td><img src=".github/rhino-simulations/Capture3.PNG" alt="Component View 3" width="350"/></td>
+      <td><img src=".github/rhino-simulations/Capture4.PNG" alt="Component View 4" width="350"/></td>
+    </tr>
+    <tr>
+      <td colspan="2" align="center"><img src=".github/rhino-simulations/Capture5.PNG" alt="System Overview" width="350"/></td>
+    </tr>
+  </table>
+  <p><em>Individual component views showing ventilation ducts, mounting systems, and structural elements</em></p>
+</div>
+
+### Design Features
+
+The 3D modeling process helped optimize:
+- **Airflow Pathways**: Strategic placement of ventilation channels for maximum efficiency
+- **Structural Integrity**: Reinforced design to support year-round outdoor use
+- **Sensor Integration**: Dedicated mounting points for temperature, humidity, and moisture sensors
+- **Modularity**: Scalable design that can be adapted to different garden bed sizes
+- **Weatherproofing**: Protected electronics housing and drainage systems
+
+These simulations were crucial in validating the physical design before prototype construction, ensuring that the ventilation system would effectively prevent overheating while maintaining optimal growing conditions.
+
+---
+
 ## 👥 Team
 
 ### Project Lead
