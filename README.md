@@ -159,7 +159,130 @@ Product designer with a focus on sustainable design and innovative prototyping, 
 
 ---
 
-## 🚀 Getting Started
+## � Research & Development
+
+### Project Overview
+
+The Bloomin Beds project emerged from a recurring problem on the Johnson & Wales Harborside campus: automatically managing greenhouse ventilation based on temperature and weather conditions. During winter months, the greenhouse effect creates excessive heat during the day while temperatures drop at night, requiring active ventilation management.
+
+Our team divided into two focused groups:
+- **Passive Solutions**: Exploring non-electronic, mechanical means of ventilation
+- **Active Solutions**: Developing sensor-based monitoring and automated ventilation systems
+
+### Garden Bed Fundamentals
+
+Through extensive research, we established critical parameters for optimal plant growth:
+
+**Optimal Growing Conditions:**
+- Temperature: 60-75°F (optimal: 80°F, maximum: 85°F)
+- pH Levels: 6.0 - 7.0
+- Soil Bulk Density: ≤1.3 g/cm³ (good), 1.3-1.55 g/cm³ (fair), >1.8 g/cm³ (poor)
+
+**Garden Bed Specifications:**
+- Width: 1.5 - 4 ft
+- Length: 4 - 10 ft
+- Height: 16-18 inches
+- Materials: Wood composites, metal
+- Winter covering: Double-layered plastic (4-8 mil thick, 2-8" gap)
+
+### Prototype Development
+
+#### Trapped Heat Problem
+<div align="center">
+  <img src=".github/research/trappedheat.png" alt="Trapped Heat Demonstration" width="600"/>
+  <p><em>Visualization of heat buildup inside the garden bed requiring ventilation</em></p>
+</div>
+
+The greenhouse effect causes dangerous temperature spikes inside covered garden beds, threatening plant health. Our research focused on both passive and active solutions to this critical problem.
+
+#### Scale Model Testing
+<div align="center">
+  <img src=".github/research/prototypebed.png" alt="Prototype Garden Bed" width="600"/>
+  <p><em>Functional scale model with double-layer hoop cover for testing ventilation solutions</em></p>
+</div>
+
+A functional scale model was constructed using soil sampled from actual garden beds, allowing easier modification and testing than full-sized installations.
+
+### Passive Ventilation Solutions
+
+#### Thermo-Reactive Wire System (Test 1)
+<div align="center">
+  <img src=".github/research/test.png" alt="Passive Test 1" width="600"/>
+  <p><em>Temperature-responsive wire mechanism for automatic vent operation</em></p>
+</div>
+
+**Design Features:**
+- Thin spring steel bent over the cover
+- Thermo-reactive metal wire attached to vent flaps
+- **Operation**: As temperature rises, wire expands and opens vents; when cooling, wire contracts and closes vents
+- Fully mechanical with no power requirements
+
+#### Bi-Metal Strip System (Test 2)
+<div align="center">
+  <img src=".github/research/test2.png" alt="Passive Test 2" width="600"/>
+  <p><em>Bi-metal strip temperature-responsive ventilation mechanism</em></p>
+</div>
+
+**Design Features:**
+- Bi-metal construction (copper + steel)
+- High thermal expansion coefficient side (copper) paired with low coefficient side (steel)
+- **Operation**: Temperature fluctuations cause differential expansion, bending the strip to open/close vents
+- Passive operation requiring no electricity
+
+### Active Ventilation Solutions
+
+**Michael Dattolo's Innovations:**
+1. **Rotating Shade/Open Mechanism**: Dynamic shading system providing temperature-responsive light exposure
+2. **Pneumatic Lift System**: Automated bed opening and venting mechanism
+3. **Rhino/Grasshopper 3D Simulation**: Demonstrated ventilation benefits with side and top holes, visualizing airflow and temperature reduction
+
+**Comprehensive Control System Features:**
+- Real-time monitoring via web portal
+- Temperature and humidity regulation
+- Integrated lighting control
+- Year-round gardening capability
+- Data-driven decision making
+- Energy savings through optimization
+
+### Weather Considerations
+
+**Winter Conditions (December - February):**
+- Average High: 46°F
+- Average Low: 21°F
+- Sky Condition: Partly cloudy
+
+**Material Research:**
+Weather-resistant materials investigated include:
+- High-strength polymers
+- Weather-responsive materials
+- Phase-change materials (rubber, bi-metals, wax)
+
+### Design & User Experience
+
+**Brand Identity:**
+- Custom logo incorporating plant and covering elements
+- Responsive design with nature-inspired elements
+- Aligned with JWU brand and sustainability standards
+
+**Digital Platforms:**
+- Condensed mobile app interface
+- Sitemap-driven design flow
+- CSS-styled website matching brand guidelines
+- User-friendly data visualization
+
+### Key Research Contributors
+
+- **Joshua Keene & Marshall Hayduk**: Garden bed specifications and optimal growing conditions
+- **Chris Dimovski**: Greenhouse systems, materials research, and environmental optimization
+- **Tyler Perreault**: Arduino sensor coding and ventilation design concepts
+- **Michael Dattolo**: Active prototypes, 3D simulation, and integrated control systems
+- **Mathew Hartung**: Passive ventilation prototypes and scale model development
+- **Keely Doyle**: Weather analysis and phase-change materials research
+- **Liz Virian & Cassandra**: Brand identity, app design, and web interface
+
+---
+
+## �🚀 Getting Started
 
 ### Prerequisites
 
