@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="masthead">
+        <div class="logo">
+            <img src="logo (1).png" alt="Your Logo" width="150">
+        </div>
+        <div class="site-title">
+            <h1>Bloomin Beds <br>By Johnson & Wales</h1>
+            <!-- Timestamp -->
+            <div class="timestamp">
+                <p id="datetime"></p>
+            </div>
+        </div>
+    </header>
+
+    <div class="navigation">
+        <div class="nav-button-container">
+            <div class="nav-button">
+                <a href="index.html"><button><span>Home</span><i></i></button></a>
+            </div>
+            <div class="nav-button">
+                <a href="About.html"><button><span>About</span><i></i></button></a>
+            </div>
+            <div class="nav-button">
+                <a href="SensorData.html"><button><span>Sensor Data</span><i></i></button></a>
+            </div>
+            <div class="nav-button">
+                <a href="Gallery.html"><button><span>Gallery</span><i></i></button></a>
+            </div>
+            <div class="nav-button">
+                <a href="Announcements.html"><button><span>Announcements</span><i></i></button></a>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Main Content -->
+    <main class="main-section"> 
+        <section class="project_overview">
+            <h2>Project Overview</h2>
+            <p>Bloomin Beds is a Directed Experimental Education / Internship Project developed by Professor Harris's class at Johnson & Wales University. It is an innovative garden bed monitoring system designed to address overheating in garden beds and promote year-round gardening through its integrated ventilation system, which is controlled via software. This allows the garden beds to be utilized effectively even during winter months. The project utilizes a Raspberry Pi board and various sensors to create a user-friendly app and website where students can monitor the health of the plants by collecting valuable data on environmental conditions and plant growth. Additionally, Bloomin Beds simplifies gardening tasks for users, making it an accessible tool for both educational purposes and practical application in agricultural settings.</p>
+        </section>
+
+        <section class="mission">
+            <h2>Our Mission</h2>
+            <p>Our mission is to enable year-round sustainable gardening through innovative technology and education. By combining automated ventilation control with comprehensive environmental monitoring, Bloomin Beds empowers students, culinary programs, and agricultural practitioners to optimize growing conditions, extend growing seasons, and make data-driven decisions. We strive to make advanced gardening technology accessible and practical for both educational settings and real-world agricultural applications.</p>
+        </section>
+
+        <section class="features">
+            <h2>Key Features</h2>
+            <ul>
+                <li>Software-Controlled Ventilation System: Automated climate control to prevent overheating and enable winter gardening.</li>
+                <li>Real-Time Environmental Monitoring: Track temperature, humidity, and soil conditions with live sensor data.</li>
+                <li>Year-Round Growing Capability: Extend your growing season through all four seasons, including winter months.</li>
+                <li>Plant Health Tracking: Monitor growth patterns and environmental impacts on plant development.</li>
+                <li>User-Friendly Interface: Access data and control systems through an intuitive app and website.</li>
+                <li>Educational Platform: Hands-on learning tool for students to understand agricultural technology and data analysis.</li>
+                <li>Simplified Garden Management: Streamlined controls make complex gardening tasks accessible to all skill levels.</li>
+            </ul>
+        </section>
+
+
+<!-- Carousel -------------------------------------------------->
+
+<section id="image-carousel" class="fade"> 
+    <div class="header-carousel">
+        <h2>Process - Carousel</h2>
+    </div>
+  <div class="carousel">
+        <ul>
+            <li class="carousel-container">
+                <img src="img/filler_1.jpg" alt="">
+                <figcaption>words</figcaption>
+            </li>
+            <li class="carousel-container">
+                <img src="img/filler_2.jpg" alt="">
+                <figcaption>words</figcaption>
+            </li>
+            <li class="carousel-container">
+                <img src="img/filler_3.jpg" alt="">
+                <figcaption>words</figcaption>
+            </li>
+        </ul>
+    </div>
+    <div class="dots-navigation">
+      <span class="dots" onclick="currentSlide(1)"></span>
+      <span class="dots" onclick="currentSlide(2)"></span>
+      <span class="dots" onclick="currentSlide(3)"></span>
+    </div> 
+</section>
+
+
+<script>
+var slidePosition = 1;
+SlideShow(slidePosition);
+
+// forward/Back controls
+function plusSlides(n) {
+  SlideShow(slidePosition += n);
+}
+
+//  images controls
+function currentSlide(n) {
+  SlideShow(slidePosition = n);
+}
+
+function SlideShow(n) {
+  var i;
+  var slides = document.getElementsByClassName("carousel-container");
+  var circles = document.getElementsByClassName("dots");
+  if (n > slides.length) {slidePosition = 1}
+  if (n < 1) {slidePosition = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  for (i = 0; i < circles.length; i++) {
+      circles[i].className = circles[i].className.replace(" enable", "");
+  }
+  slides[slidePosition-1].style.display = "block";
+  circles[slidePosition-1].className += " enable";
+} 
+var slidePosition = 0;
+SlideShow();
+
+function SlideShow() {
+  var i;
+  var slides = document.getElementsByClassName("carousel-container");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  slidePosition++;
+  if (slidePosition > slides.length) {slidePosition = 1}
+  slides[slidePosition-1].style.display = "block";
+  setTimeout(SlideShow, 4000); // Change image every 4 seconds
+} 
+
+
+</script>
+
+<!-- Carousel --------------------------------------------------->
+
+        <!-- Contributors Section -->
+
+        
+        <section class="contributors">
+            <hr>
+            <h2>Contributors</h2>
+            <!-- Contributor 1 -->
+            <div class="contributor">
+                <img src="contribute/harris.jfif" alt="Professor Johnathan Harris">
+                <div class="contributor-details">
+                    <h3>Jonathan Lyle Harris</h3>
+                    <p>Jonathan Lyle Harris is an educator and designer focused on creating better environments for pedestrians and other non-motorized users. His work centers on human-scale public space, walkability, and the design of safer, more accessible streets and urban amenities.</p>
+                </div>
+
+            </div>
+            <div class="contributor">
+                <img src="contribute/mike.jfif" alt="Michael Dattolo">
+                <div class= "contributor-details">
+                    <h3>Michael Dattolo</h3>
+                    <p>Michael Dattolo is a product designer and entrepreneur with a hands-on, prototype-driven approach. He focuses on turning early concepts into functional outcomes through practical problem-solving, iterative design, and making-oriented execution.</p>
+                </div>
+            </div>
+        </section>
+
+            <!-- Contributor 3 -->
+            <div class="contributor">
+                <img src="contribute/mat.jpg" alt="Mathew Hartung">
+                <div class= "contributor-details">
+                    <h3>Mathew Hartung</h3>
+                    <p>Mathew Hartung is a product designer with a focus on sustainable design and innovative prototyping. His work explores the intersection of traditional craftsmanship and modern materials, with particular interest in reducing environmental impact through thoughtful material selection and adaptive design solutions.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contributor 4 -->
+            <div class="contributor">
+                <img src="contribute/keely.jfif" alt="Keely Doyle">
+                <div class= "contributor-details">
+                    <h3>Keely Doyle</h3>
+                    <p>Keely Doyle is a product designer who prioritizes innovative, user-centered solutions. She also brings a craft-oriented perspective through jewelry design, combining creativity, detail, and form-focused thinking.</p>
+                </div>
+            </div>
+        </section>
+<!-- Contributor 12 -->
+            <div class="contributor">
+                <img src="contribute/zak.jpeg" alt="Zak Vallee">
+                <div class= "contributor-details">
+                    <h3>Zak Vallee</h3>
+                    <p>Zak Vallee is an Honors Integrated Product Design student who emphasizes improvement-driven design. He is especially interested in analyzing existing products, identifying opportunities, and refining form, function, and usability through iteration.</p>
+                </div>
+            </div>
+        </section>
+          <!-- Contributor 5 -->
+            <div class="contributor">
+                <img src="contribute/chris.jfif" alt="Christopher D">
+                <div class= "contributor-details">
+                    <h3>Chris Dimovski</h3>
+                    <p>Chris Dimovski is an industrial and product designer focused on user-centered solutions that improve performance and everyday experience. His work is grounded in practical problem-solving, balancing function, usability, and real-world constraints.</p>
+                </div>
+            </div>
+        </section>
+
+          <!-- Contributor 6 -->
+            <div class="contributor">
+                <img src="contribute/josh.jfif" alt="Joshua Keene">
+                <div class= "contributor-details">
+                    <h3>Joshua Keene</h3>
+                    <p>Joshua Keene is an Integrated Product Design graduate with strengths in 3D modeling and system-level thinking. He is skilled in CAD-driven development and technical design work, supporting products from concept through refinement and documentation.</p>
+                </div>
+            </div>
+        </section>
+
+          <!-- Contributor 7 -->
+            <div class="contributor">
+                <img src="contribute/marshall.jfif" alt="Marshall Hayduk">
+                <div class= "contributor-details">
+                    <h3>Marshall Hayduk</h3>
+                    <p>Marshall Hayduk is a product design student focused on challenging assumptions and pushing beyond standard solutions. He brings a curious, concept-forward mindset to the design process while building a strong base in practical product development.</p>
+                </div>
+            </div>
+        </section>
+
+         <!-- Contributor 8 -->
+            <div class="contributor">
+                <img src="contribute/PF.jfif" alt="Peikang Fan">
+                <div class= "contributor-details">
+                    <h3>Peikang Fan</h3>
+                    <p>Peikang Fan is an emerging product designer with a strong interest in building a foundation in product thinking and design execution. Their focus centers on developing skills through projects and continued growth in the field.</p>
+                </div>
+            </div>
+        </section>
+
+          <!-- Contributor 9 -->
+            <div class="contributor">
+                <img src="contribute/tyler.jfif" alt="Tyler Perreault">
+                <div class= "contributor-details">
+                    <h3>Tyler Perreault</h3>
+                    <p>Tyler Perreault is an aspiring AI-focused professional and student building experience through both academics and real-world work. He is driven, practical, and developing skills at the intersection of emerging technology and day-to-day operations.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contributor 10 -->
+            <div class="contributor">
+                <img src="contribute/head.png" alt="Cassandra R">
+                <div class= "contributor-details">
+                    <h3>Cassandra R</h3>
+                    <p> is a product designer at Johnson & Wales University, having skills in construction and prototyping.</p>
+                </div>
+            </div>
+        </section>
+
+         <!-- Contributor 11 -->
+            <div class="contributor">
+                <img src="contribute/head.png" alt="Liz Virian">
+                <div class= "contributor-details">
+                    <h3>Liz Virian</h3>
+                    <p>Liz Virian is a graphic designer with strengths in branding, visual identity, and web design. She creates clean, user-friendly design systems across digital and print, translating ideas into consistent, polished visuals that communicate clearly.</p>
+                </div>
+            </div>
+        </section>
+        <!-- End of Contributors Section -->
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <section class="involved">
+            <h2>Get Involved</h2>
+            <p>If you're passionate about sustainability, technology, or gardening, we welcome your involvement. Join us in our mission to create a more eco-friendly and informed community. Contact us to learn about internship opportunities, collaborations, or to explore how you can contribute to Bloomin Beds.</p>
+        </section>
+        <p>&copy; 2023 Bloomin Beds</p>
+    </footer>
+</body>
+<script>
+  new Splide( '#image-carousel' ).mount();
+</script>
+</html>

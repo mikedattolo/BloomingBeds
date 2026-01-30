@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="templates/b.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="masthead">
+        <div class="logo">
+            <img src="logo (1).png" alt="Your Logo" width="150">
+        </div>
+        <div class= "site-title">
+            <h1>Bloomin Beds By Johnson & Wales</h1>
+            <!-- Timestamp -->
+            <div class="timestamp">
+                <p id="datetime"></p>
+            </div>
+        </div>
+    </header>
+
+    <div class="navigation">
+    <div class="nav-button-container">
+        <div class="nav-button">
+            <a href="index.html"><button><span>Home</span><i></i></button></a>
+        </div>
+        <div class="nav-button">
+            <a href="About.html"><button><span>About</span><i></i></button></a>
+        </div>
+        <div class="nav-button">
+            <a href="SensorData.html"><button><span>Sensor Data</span><i></i></button></a>
+        </div>
+        <div class="nav-button">
+            <a href="Gallery.html"><button><span>Gallery</span><i></i></button></a>
+        </div>
+        <div class="nav-button">
+            <a href="Announcements.html"><button><span>Announcements</span><i></i></button></a>
+        </div>
+    </div>
+</div>
+
+    <!-- Main content -->
+    <main>
+        <!-- Add this section for the chart -->
+        <div class="chart-container">
+            <canvas id="sensorDataChart" width="600" height="300"></canvas>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2023 Bloomin Beds</p>
+    </footer>
+
+    <script>
+        // Initialize the chart
+        const chartCanvas = document.getElementById('sensorDataChart');
+        const ctx = chartCanvas.getContext('2d');
+
+        // Customize the chart options as needed
+        const chartOptions = {
+            scales: {
+                x: {
+                    display: true,
+                    title: {
+                        display: true,
+                        text: 'Timestamp',
+                    },
+                },
+                y: {
+                    display: true,
+                    title: {
+                        display: true,
+                        text: 'Value',
+                    },
+                },
+            },
+        };
+
+        // Function to initialize or retrieve data from localStorage
+        function initializeChartData() {
+            const storedData = JSON.parse(localStorage.getItem('sensorData')) || { timestamps: [], temperature: [], humidity: [], lightIntensity: [] };
+
+            return {
+                labels: storedData.timestamps,
+                datasets: [
+                    {
+                        label: 'Temperature (°F)',
+                        data: storedData.temperature,
+                        borderColor: 'rgba(255, 99, 132, 1)',
+                        fill: false,
+                    },
+                    {
+                        label: 'Humidity (%)',
+                        data: storedData.humidity,
+                        borderColor: 'rgba(54, 162, 235, 1)',
+                        fill: false,
+                    },
+                    {
+                        label: 'Light Intensity',
+                        data: storedData.lightIntensity,
+                        borderColor: 'rgba(75, 192, 192, 1)',
+                        fill: false,
+                    },
+                ],
+            };
+        }
+
+        const myChart = new Chart(ctx, {
+            type: 'line',
+            data: initializeChartData(),
+            options: chartOptions,
+        });
+
+        // Function to save data to localStorage
+        function saveDataToLocalStorage() {
+            const chartData = myChart.data;
+            localStorage.setItem('sensorData', JSON.stringify({
+                timestamps: chartData.labels,
+                temperature: chartData.datasets[0].data,
+                humidity: chartData.datasets[1].data,
+                lightIntensity: chartData.datasets[2].data,
+            }));
+        }
+
+        // Function to fetch and update sensor data in the chart
+        function fetchAndUpdateSensorData() {
+            // Fetch data from the "water_sensor" route
+            fetch('/water_sensor')
+                .then(response => response.json())
+                .then(data => {
+                    if (data.temperature !== 'N/A' && data.humidity !== 'N/A') {
+                        // Add the data to the chart
+                        const timestamp = new Date().toLocaleTimeString();
+                        const temperature = data.temperature;
+                        const humidity = data.humidity;
+                        const lightIntensity = data.light_intensity;
+
+                        myChart.data.labels.push(timestamp);
+                        myChart.data.datasets[0].data.push(temperature);
+                        myChart.data.datasets[1].data.push(humidity);
+                        myChart.data.datasets[2].data.push(lightIntensity);
+
+                        // Limit the number of data points to display (e.g., 10 points)
+                        const maxDataPoints = 10;
+                        if (myChart.data.labels.length > maxDataPoints) {
+                            myChart.data.labels.shift();
+                            myChart.data.datasets[0].data.shift();
+                            myChart.data.datasets[1].data.shift();
+                            myChart.data.datasets[2].data.shift();
+                        }
+
+                        // Update the chart
+                        myChart.update();
+
+                        // Save the updated data to localStorage
+                        saveDataToLocalStorage();
+                    } else {
+                        console.log("Data not available.");
+                    }
+                })
+                .catch(error => {
+                    console.error("Error fetching sensor data:", error);
+                });
+        }
+
+        // Fetch and update sensor data in the chart every 2.5 seconds
+        setInterval(fetchAndUpdateSensorData, 2500);
+
+        // Function to update the timestamp
+        function updateTimestamp() {
+            const datetimeElement = document.getElementById('datetime');
+            const now = new Date();
+            datetimeElement.textContent = now.toLocaleString();
+        }
+
+        // Update the timestamp every second
+        setInterval(updateTimestamp, 10000);
+
+        // Initial update of the timestamp
+        updateTimestamp();
+    </script>
+</body>
+</html>

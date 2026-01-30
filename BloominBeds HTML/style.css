@@ -1,0 +1,438 @@
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: #F2F3F5;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #004A91;
+            color: #FFF;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            font-family: 'Open Sans', sans-serif;
+            font-size: 32px;
+            margin: 0;
+            padding: 0;
+        }
+        .announcement h2{
+            color: #EEB111; /* Header color in #EEB111 */
+            font-family: 'Open Sans', sans-serif;
+            font-size: 24px;
+        }
+        .announcement p{
+            font-family: 'Open Sans', sans-serif;
+            color: #004A91;
+            font-size: 12px;
+        }
+
+        .site-title {
+            margin-top: 10px;
+        }
+
+        /* Navigation style */
+        .navigation {
+            background-color: #004A91;
+            color: #FFF;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        .nav-button-container {
+            display: flex;
+            justify-content: center;
+        }
+
+        .nav-button {
+            margin: 0 10px;
+        }
+
+        .nav-button a {
+            text-decoration: none;
+            color: #FFF;
+         font-family: 'Open Sans', sans-serif;
+        }
+
+        .nav-button a button {
+            position: relative;
+            background: #EBB111;
+            color: #fff;
+            text-decoration: none;
+            text-transform: uppercase;
+            border: none;
+            letter-spacing: 0.1rem;
+            font-size: 1rem;
+            padding: 1rem 3rem;
+            transition: 0.2s;
+            cursor: pointer;
+        }
+
+        .nav-button a button:hover {
+            letter-spacing: 0.2rem;
+            padding: 1.1rem 3.1rem;
+            background: #EBB111;
+        }
+
+        .nav-button a button::before {
+            content: "";
+            position: absolute;
+            inset: 2px;
+            background: #004A91;
+        }
+
+        .nav-button a button span {
+            position: relative;
+            z-index: 1;
+        }
+
+        .nav-button a button i {
+            position: absolute;
+            inset: 0;
+            display: block;
+        }
+
+        .nav-button a button i::before {
+            content: "";
+            position: absolute;
+            width: 10px;
+            height: 2px;
+            left: 80%;
+            top: -2px;
+            border: 2px solid #EBB111;
+            background: #272822;
+            transition: 0.2s;
+        }
+
+        .nav-button a button:hover i::before {
+            width: 15px;
+            left: 20%;
+        }
+
+        .nav-button a button i::after {
+            content: "";
+            position: absolute;
+            width: 10px;
+            height: 2px;
+            left: 20%;
+            bottom: -2px;
+            border: 2px solid #EBB111;
+            background: #272822;
+            transition: 0.2s;
+        }
+
+        .nav-button a button:hover i::after {
+            width: 15px;
+            left: 80%;
+        }
+
+        /* Container style */
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #FFF;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Video and sensor data style */
+        .video-sensor-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .video-container {
+            flex: 1;
+            border: 2px solid #004A91; /* Add border around video feed */
+            padding: 10px;
+            margin-right: 20px;
+        }
+
+        .video-container img {
+            width: 100%;
+        }
+
+        .sensor-data {
+            flex: 1;
+        }
+.sensor-data h3 {
+    color: #EBB111;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 20px;
+        }
+.sensor-data p{
+    font-family: 'Open Sans', sans-serif;
+    color: #004A91;
+    font-size: 12px;
+}
+.meter-container {
+     margin: 10px 0;
+        }
+
+ .meter-container meter {
+     width: 100%;
+     max-width: 200px; /* Constrict the size of the meters */
+        }
+
+        /* Footer style */
+footer {
+    background-color: #004A91;
+    color: #FFF;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 14px;
+        }
+
+.involved{
+    margin-left:10em;
+    margin-right:10em;
+    text-align: left;
+}
+
+.main-section {
+    
+    font-family: 'Open Sans', sans-serif;
+    padding:2em;
+}
+
+.main-section h2 {
+    color: #EEB111; /* Header color in #EEB111 */
+    font-family: 'Open Sans', sans-serif;
+    font-size: 24px;
+    margin-left:1em;
+}
+
+.main-section p {
+    color: #000; /* Header color in #EEB111 */
+    font-family: 'Open Sans', sans-serif;
+    font-size: 12px;
+    margin-left:3em;
+}
+
+.features{
+    margin-top:2em;
+
+}
+
+.main-section .features{
+    background-color: #EEB111;
+}
+
+.main-section .features h2{
+    color:#fff;
+    padding-top:1em;
+}
+.main-section ul {
+    padding: 0;
+    margin-left:2em;
+    padding:10px;
+    padding-bottom:25px;
+}
+
+.main-section li {
+    margin: 5px;
+    color:#fff;
+    padding:5px;
+}
+
+.contributors{
+    padding: 2em 0;
+}
+
+.contributors h2{
+    color: #EEB111;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 24px;
+    margin-left:1em;
+    padding-top:10px;
+}
+
+.contributor{
+    padding:1em 2em;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    align-items: start;
+    gap: 1.5em;
+}
+
+.contributor img{
+    width: 200px !important;
+    height: 200px !important;
+    min-width: 200px;
+    min-height: 200px;
+    max-width: 200px;
+    max-height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    display: block;
+}
+
+.contributor h3{
+    color: #EEB111;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 20px;
+    margin-left:1em;
+
+}
+
+.contributor p{
+    color: #000;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    line-height: 1.8;
+    margin-left:1em;
+    margin-right:0.5em;
+
+}
+
+main{
+    padding:2rem;
+    margin-left:8em;
+    margin-right:8em;
+    max-width: 1400px;
+
+}
+
+.col-lg-8 h3{
+    color: #EEB111;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 20px;
+}
+
+.col-lg-8 p{
+    color: #000;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+}
+
+.col-lg-4 h3{
+    color: #EEB111;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 20px;
+}
+hr{
+    border: 2px solid #004A91;
+    margin-bottom:2px;
+}
+
+//* for carousel *******************************************//
+
+
+#image-carousel{
+    position: absolute;
+    max-width: 1300px;
+}
+.fade{
+}
+
+.header-carousel h2{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 24px;
+    margin-left:2em;
+    padding-top:2em;
+    color:#004A91;
+    display:none;
+}
+
+.carousel{
+    display: flex;
+    justify-content: center;
+}
+
+.carousel-container{
+    display:none;
+    width: 100%;
+    max-height:1000px;
+    object-fit: contain;
+}
+
+.Card1{
+
+}
+
+.carousel-container img {
+   width: 1000px;
+   height: 700px;
+   object-fit: cover;
+   background-color:transparent;
+   display: flex;
+   justify-content: center;
+}
+
+figcaption {
+  color:#004A91;
+  font-size: 16px;
+  padding: 10px 0px;
+  text-align: center;
+  background-color:transparent;
+}
+
+.dots-navigation{
+    text-align:center;
+    background-color: transparent;
+    padding-bottom:1em;
+}
+
+.dots {
+  cursor: pointer;
+  height: 16px;
+  width: 16px;
+  margin: 0 3px;
+  background-color:#004A91;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.dots:hover{
+    background-color: #EEB111;
+}
+
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.4s;
+  animation-name: fade;
+  animation-duration: 1.4s;
+}
+
+
+@keyframes .fade {
+  from {opacity: .5}
+  to {opacity: 2}
+}
+
+//* Carousel End *///////////////////////////////////////////////
+
+//* logo animations *//
+
+.logo {
+            animation: logoAnimation 4s forwards;
+        }
+        @keyframes logoAnimation {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(0.7);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        /* CSS for welcome text animation */
+.welcome-text {
+    opacity: 0;
+    animation: fadeIn 2s ease-in-out 3s forwards;
+}
+        
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }

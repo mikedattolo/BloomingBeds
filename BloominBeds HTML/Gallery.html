@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .gallery-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2em;
+            padding: 2em;
+        }
+        
+        .gallery-item {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+        
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            display: block;
+        }
+        
+        .gallery-caption {
+            padding: 1.5em;
+        }
+        
+        .gallery-caption h3 {
+            color: #EEB111;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 20px;
+            margin-top: 0;
+            margin-bottom: 0.5em;
+        }
+        
+        .gallery-caption p {
+            color: #333;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 14px;
+            line-height: 1.6;
+            margin: 0;
+        }
+        
+        .gallery-intro {
+            text-align: center;
+            padding: 2em;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .gallery-intro h2 {
+            color: #EEB111;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 32px;
+            margin-bottom: 0.5em;
+        }
+        
+        .gallery-intro p {
+            color: #333;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 16px;
+            line-height: 1.8;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="masthead">
+        <div class="logo">
+            <img src="logo (1).png" alt="Bloomin Beds Logo" width="150">
+        </div>
+        <div class="site-title">
+            <h1>Bloomin Beds <br>By Johnson & Wales</h1>
+            <!-- Timestamp -->
+            <div class="timestamp">
+                <p id="datetime"></p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation buttons -->
+    <div class="navigation">
+        <div class="nav-button-container">
+            <div class="nav-button">
+                <a href="index.html"><button><span>Home</span><i></i></button></a>
+            </div>
+            <div class="nav-button">
+                <a href="About.html"><button><span>About</span><i></i></button></a>
+            </div>
+            <div class="nav-button">
+                <a href="SensorData.html"><button><span>Sensor Data</span><i></i></button></a>
+            </div>
+            <div class="nav-button">
+                <a href="Gallery.html"><button><span>Gallery</span><i></i></button></a>
+            </div>
+            <div class="nav-button">
+                <a href="Announcements.html"><button><span>Announcements</span><i></i></button></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main>
+        <div class="gallery-intro">
+            <h2>Project Gallery</h2>
+            <p>Explore the Bloomin Beds system through these screenshots showcasing our innovative garden bed monitoring technology, user interface, and data visualization capabilities.</p>
+        </div>
+
+        <div class="gallery-container">
+            <!-- Gallery Item 1 -->
+            <div class="gallery-item">
+                <img src="screenshots/Screenshot (2)_cropped (1).png" alt="Bloomin Beds Interface">
+                <div class="gallery-caption">
+                    <h3>System Dashboard</h3>
+                    <p>The main dashboard displays real-time environmental data from the garden beds, including temperature, humidity, and soil moisture levels. Users can monitor multiple garden beds simultaneously with intuitive visual indicators.</p>
+                </div>
+            </div>
+
+            <!-- Gallery Item 2 -->
+            <div class="gallery-item">
+                <img src="screenshots/Screenshot (3)_cropped.png" alt="Ventilation Control System">
+                <div class="gallery-caption">
+                    <h3>Ventilation Control</h3>
+                    <p>Our software-controlled ventilation system interface allows users to adjust airflow and temperature settings. This feature enables year-round gardening by automatically preventing overheating and maintaining optimal growing conditions.</p>
+                </div>
+            </div>
+
+            <!-- Gallery Item 3 -->
+            <div class="gallery-item">
+                <img src="screenshots/Screenshot (4)_cropped.png" alt="Data Visualization">
+                <div class="gallery-caption">
+                    <h3>Historical Data Tracking</h3>
+                    <p>Track plant health over time with comprehensive data visualization tools. View trends in temperature, humidity, and growth patterns to make informed decisions about garden bed management and optimize growing conditions.</p>
+                </div>
+            </div>
+
+            <!-- Gallery Item 4 -->
+            <div class="gallery-item">
+                <img src="screenshots/Screenshot (5)_cropped.png" alt="Mobile Interface">
+                <div class="gallery-caption">
+                    <h3>Mobile-Friendly Design</h3>
+                    <p>Access the Bloomin Beds system from any device with our responsive, mobile-friendly interface. Monitor your garden beds on the go and receive alerts when conditions require attention.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2023 Bloomin Beds</p>
+    </footer>
+
+    <script>
+        // Display current date and time
+        function updateDateTime() {
+            const now = new Date();
+            const options = { 
+                weekday: 'long', 
+                year: 'numeric', 
+                month: 'long', 
+                day: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit'
+            };
+            document.getElementById('datetime').textContent = now.toLocaleDateString('en-US', options);
+        }
+        updateDateTime();
+        setInterval(updateDateTime, 60000); // Update every minute
+    </script>
+</body>
+</html>

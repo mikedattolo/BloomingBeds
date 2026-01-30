@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="templates/b.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="masthead">
+        <div class="logo">
+            <img src="logo (1).png" alt="Your Logo" width="150">
+        </div>
+        <div class="site-title">
+            <h1>Bloomin Beds By Johnson & Wales</h1>
+            <!-- Timestamp -->
+            <div class="timestamp">
+                <p id="datetime"></p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation buttons -->
+    <div class="navigation">
+    <div class="nav-button-container">
+        <div class="nav-button">
+            <a href="index.html"><button><span>Home</span><i></i></button></a>
+        </div>
+        <div class="nav-button">
+            <a href="About.html"><button><span>About</span><i></i></button></a>
+        </div>
+        <div class="nav-button">
+            <a href="SensorData.html"><button><span>Sensor Data</span><i></i></button></a>
+        </div>
+        <div class="nav-button">
+            <a href="Gallery.html"><button><span>Gallery</span><i></i></button></a>
+        </div>
+        <div class="nav-button">
+            <a href="Announcements.html"><button><span>Announcements</span><i></i></button></a>
+        </div>
+    </div>
+</div>
+
+    <main>
+        <section class="announcement">
+            <h2>Important Update</h2>
+            <p>Details about the announcement go here.</p>
+            <p class="date">Published on: <span id="announcementDate">[Date]</span></p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Bloomin Beds</p>
+    </footer>
+    
+    <!-- Your JavaScript code here -->
+    <script>
+        // Function to fetch and display announcements from your GitHub repository
+        function displayAnnouncements() {
+            // Replace 'your-username' and 'your-repo-name' with your GitHub username and repository name
+            const githubRawUrl = 'https://raw.githubusercontent.com/mikedattolo/announcements.json/main/announcements.json';
+
+            fetch(githubRawUrl)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    const announcementsContainer = document.querySelector('.announcement');
+
+                    // Clear the existing announcements
+                    announcementsContainer.innerHTML = '';
+
+                    data.announcements.forEach(announcement => {
+                        const announcementSection = document.createElement('section');
+                        announcementSection.classList.add('announcement');
+
+                        const announcementTitle = document.createElement('h2');
+                        announcementTitle.textContent = announcement.title;
+
+                        const announcementContent = document.createElement('p');
+                        announcementContent.textContent = announcement.content;
+
+                        const announcementDate = document.createElement('p');
+                        announcementDate.classList.add('date');
+                        announcementDate.innerHTML = `Published on: <span>${announcement.date}</span>`;
+
+                        announcementSection.appendChild(announcementTitle);
+                        announcementSection.appendChild(announcementContent);
+                        announcementSection.appendChild(announcementDate);
+
+                        announcementsContainer.appendChild(announcementSection);
+                    });
+                })
+                .catch(error => {
+                    console.error('Error fetching or parsing announcements:', error);
+                });
+        }
+
+        // Call the function to display announcements when the page loads
+        window.addEventListener('load', displayAnnouncements);
+
+        // Function to automatically refresh announcements every 5 minutes
+        function autoRefreshAnnouncements() {
+            setInterval(displayAnnouncements, 300000); // Refresh every 5 minutes (300,000 milliseconds)
+        }
+
+        // Call the function to start automatic refresh
+        window.addEventListener('load', autoRefreshAnnouncements);
+    </script>
+</body>
+</html>

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<!-- Header -->
+<header>
+    <div class="logo">
+        <img src="logo (1).png" alt="Your Logo" width="150" id="logo">
+    </div>
+    <div class="site-title welcome-text">
+        <h1 class="welcome-text">Welcome to <span style="color: #FFF; font-family: 'Termina', sans-serif;">Bloomin Beds</span> By Johnson & Wales</h1>
+        <!-- Timestamp -->
+        <div class="timestamp">
+            <p id="datetime"></p>
+        </div>
+    </div>
+</header>
+
+<!-- Navigation buttons -->
+<div class="navigation">
+    <div class="nav-button-container">
+        <div class="nav-button">
+            <a href="index.html"><button><span>Home ⌂</span><i></i></button></a>
+        </div>
+        <div class="nav-button">
+            <a href="About.html"><button><span>About</span><i></i></button></a>
+        </div>
+        <div class="nav-button">
+            <a href="SensorData.html"><button><span>Sensor Data</span><i></i></button></a>
+        </div>
+        <div class="nav-button">
+            <a href="Gallery.html"><button><span>Gallery</span><i></i></button></a>
+        </div>
+        <div class="nav-button">
+            <a href="Announcements.html"><button><span>Announcements</span><i></i></button></a>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8">
+            <h3 class="mt-5">Live Stream</h3>
+            <div class="video-sensor-container">
+                <div class="video-container">
+                    <img id="videoElement" src="{{ url_for('video_feed') }}" width="100%">
+                </div>
+                <div class="sensor-data">
+                    <h3>Sensor Data</h3>
+                        <p>Temperature: <span id="temperature_text">Loading...</span> °F</p>
+                    <div class="meter-container">
+                        <meter id="temperature_meter" low="0" high="100" min="0" max="100" optimum="80" value="0">0/100</meter>
+                    </div>
+                    <p>Humidity: <span id="humidity_text">Loading...</span> %</p>
+                    <div class="meter-container">
+                        <meter id="humidity_meter" low="0" high="70" min="0" max="100" optimum="80" value="0">0/100</meter>
+                    </div>
+                    <p>Moisture Level: <span id="moisture_level_text">Loading...</span></p>
+                    <p>Category: <span id="moisture_category">Loading...</span></p>
+                    <p>Light Intensity: <span id="light_intensity_text">Loading...</span></p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <h3>Weather Forecast</h3>
+            <a class="weatherwidget-io" href="https://forecast7.com/en/41d82n71d41/providence/?unit=us" data-label_1="PROVIDENCE" data-label_2="WEATHER" data-theme="original">PROVIDENCE WEATHER</a>
+            <script>
+                !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
+            </script>
+        </div>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer>
+    <p>&copy; 2023 Bloomin Beds</p>
+</footer>
+
+<script>
+    // Function to fetch sensor data
+    function fetchSensorData() {
+        // Fetch data from the "water_sensor" route
+        fetch('/water_sensor')
+            .then(response => response.json())
+            .then(data => {
+                if (data.moisture_category) {
+                    // Update the HTML elements with the received sensor data
+                    document.querySelector('#moisture_level_text').textContent = data.moisture_level;
+                    document.querySelector('#moisture_category').textContent = data.moisture_category;
+                    document.querySelector('#temperature_text').textContent = data.temperature;
+                    document.querySelector('#humidity_text').textContent = data.humidity;
+                    document.querySelector('#light_intensity_text').textContent = data.light_intensity;
+
+                  
+                } else {
+                    console.log("Category data not available.");
+                }
+            })
+            .catch(error => {
+                console.error("Error fetching sensor data:", error);
+            });
+    }
+       
+    // Function to fetch weather data
+    function fetchWeatherData() {
+        fetch('/weather')
+            .then(response => response.json())
+            .then(data => {
+                document.querySelector('#weather_temperature').textContent = data.main.temp;
+                document.querySelector('#weather_humidity').textContent = data.main.humidity;
+                document.querySelector('#weather_description').textContent = data.weather[0].description;
+            })
+            .catch(error => {
+                console.error("Error fetching weather data:", error);
+            });
+    }
+
+    // Fetch weather data when the page loads
+    fetchWeatherData();
+    
+    // Fetch sensor data when the page loads and every 2.5 seconds
+    fetchSensorData();
+    setInterval(fetchSensorData, 2500);
+
+    // Function to display the current date and time
+    function displayDateTime() {
+        const now = new Date();
+        const datetimeElement = document.getElementById('datetime');
+        datetimeElement.textContent = now.toLocaleString();
+    }
+
+    // Display date and time when the page loads
+    displayDateTime();
+</script>
+</body>
+</html>
